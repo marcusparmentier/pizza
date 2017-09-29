@@ -11,7 +11,6 @@ A website created with JS focusing on constructors and prototypes that will give
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
 | **Program Gathers User Size Input and Reflects Price** | User input: "Medium" | Output: "$6" |
 | **Program Gathers One Topping Input and Reflects Price** | User Input: "Size: Md Topping: Sausage" | Output: "$7" |
 | **Program Gathers Multiple Toppings Input and Reflects Price**| Input: "Size: Lg Toppings: Sausage, Mushrooms, Onions" | Output: "$11" |
