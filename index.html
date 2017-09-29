@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Maker</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Pizza Designer</h1>
+
+    <form id="pizzaForm">
+      <div class="row">
+        <h3>Pizza Size</h3>
+        <div class="radio">
+            <label>
+              <input type="radio" name="size" value="1" checked>
+              Small
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="2">
+            Medium
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="3">
+            Large
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="4">
+            Extra Large
+          </label>
+        </div>
+      </div>
+      <button type="submit" name="btn">Submit</button>
+    </form>
+    <div class="row">
+      <h2>Pizza Price</h2>
+      <output name="result"></output>
+    </div>
+  </div>
+</body>
