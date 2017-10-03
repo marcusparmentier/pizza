@@ -9,38 +9,59 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pizza Designer</h1>
-
+    <div class="jumbotron">
+      <h1>Pizza Designer</h1>
+    </div>
     <form id="pizzaForm">
-      <div class="row">
-        <h3>Pizza Size</h3>
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value=5 checked>
-            Small
-          </label>
+      <div class="row" id="evenWhite">
+        <div class="col-md-6">
+          <h3>Pizza Size</h3>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value=5 checked>
+              Small
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value=6>
+              Medium
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value=8>
+              Large
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value=11>
+              Extra Large
+            </label>
+          </div>
         </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value=6>
-            Medium
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value=8>
-            Large
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value=11>
-            Extra Large
-          </label>
+        <div class="col-md-6">
+          <div class="pizzaDetails">
+            <h1>Pizza Price</h1>
+            <h2 id="pizzaPrice" name="result"></h2>
+          </div>
         </div>
       </div>
       <div class="row">
-        <h3>Pizza Toppings</h3>
+        <div class="col-md-4">
+          <h1>*</h1>
+        </div>
+        <div class="col-md-4" id="toppingsHeader">
+          <h3>Pizza Toppings</h3>
+          <p>Toppings are $1 per topping</p>
+          <p>Premium Toppings are $2 per topping <br><span class="footnote">Labeled with *</span></p>
+        </div>
+        <div class="col-md-4">
+          <h1>*</h1>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-6">
           <div class="checkbox">
             <label>
@@ -63,19 +84,19 @@
           <div class="checkbox">
             <label>
               <input type="checkbox" name="toppings" value=2>
-              Chicken
+              Chicken*
             </label>
           </div>
           <div class="checkbox">
             <label>
               <input type="checkbox" name="toppings" value=2>
-              Bacon
+              Bacon*
             </label>
           </div>
           <div class="checkbox">
             <label>
               <input type="checkbox" name="toppings" value=2>
-              Philly Steak
+              Philly Steak*
             </label>
           </div>
         </div>
@@ -113,16 +134,15 @@
           <div class="checkbox">
             <label>
               <input type="checkbox" name="toppings" value=2>
-              Extra Cheese
+              Extra Cheese*
             </label>
           </div>
         </div>
       </div>
-      <button id="pizzaSubmit" type="submit" name="btn">Submit</button>
+      <br>
+      <div class="row">
+        <button id="pizzaSubmit" type="submit" name="btn">Submit</button>
+      </div>
     </form>
-    <div class="row">
-      <h2>Pizza Price</h2>
-      <output id="pizzaPrice" name="result"></output>
-    </div>
   </div>
 </body>
