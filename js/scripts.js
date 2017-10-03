@@ -1,4 +1,7 @@
+
 //Business Logic***************************************************
+var topArray = [];
+var inputtedToppings = 0;
 
 function Pizza (size, toppings) {
   this.size = size;
@@ -6,16 +9,18 @@ function Pizza (size, toppings) {
   this.priceTotal = 0;
 }
 
+var sumTop = function(topArray) {
+  for (i = 0; i < topArray.length; ++i) {
+    inputtedToppings += topArray[i];
+  }
+  return inputtedToppings;
+}
+
 Pizza.prototype.priceFig = function() {
-
-
-  this.priceTotal = this.size + this.toppings;
+  this.priceTotal = this.toppings + this.size;
   return this.priceTotal;
 }
 
-
-
-// var currentPizza = new Pizza
 
 //User Interface Logic**********************************************
 
@@ -24,12 +29,18 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputtedSize = parseInt($("input:radio[name=size]:checked").val());
-    var inputtedToppings = parseInt($("input:radio[name=toppings]:checked").val());
+
+    // var inputtedToppings = 0;
+    $("input:checkbox[name=toppings]:checked").each(function () {
+      topArray.push(parseInt($(this).val()));
+    });
+
+    inputtedToppings = sumTop(topArray);
+
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
 
     newPizza.priceFig();
-
-    $("#pizzaPrice").text(newPizza.priceTotal);
+    $("#pizzaPrice").append("$" + newPizza.priceTotal);
   });
 });
 
@@ -37,83 +48,26 @@ $(document).ready(function() {
 
 
 
+// function add(a, b) {
+//   topArray.reduce(add, 0);
+//   return inputtedToppings = (a + b);
+// };
 
+// var sumTop = function(topArray) {
 
-
-
-
-
-
-//
-// //Business Logic***************************************************
-//
-// function Pizza (size, toppings) {
-//   this.size = size;
-//   this.toppings = toppings;
-//   this.priceTotal = 0;
-// }
-//
-// Pizza.prototype.priceFig = function() {
-//
-//
-//   this.priceTotal = this.toppings + this.size;
-//   return this.priceTotal;
-// }
-//
-//
-//
-// // var currentPizza = new Pizza
-//
-// //User Interface Logic**********************************************
-//
-// $(document).ready(function() {
-//   $("form#pizzaForm").submit(function(event) {
-//     event.preventDefault();
-//
-//     var inputtedSize = parseInt($("input:radio[name=size]:checked").val());
-//
-//     var topArray = [];
-//
-//     $("input:checkbox[name=toppings]:checked").each(function () {
-//       debugger;
-//       topArray.push(parseInt($("input:checkbox[name=toppings]:checked").val()));
-//
-//     });
-//
-//     var sumTop = function() {
-//       debugger;
-//       var toppings = 0;
-//       if (topArray.length === 1) {
-//         debugger;
-//         var toppings = (topArray[0]);
-//         // return inputtedToppings;
-//       }
-//       else if (topArray.length === 2) {
-//         debugger;
-//         var toppings = (topArray[0] + topArray[1]);
-//         // return inputtedToppings;
-//       }
-//       else if (topArray.lenght === 3) {
-//         toppings = (topArray[0] + topArray[1] + topArray[2]);
-//         // return inputtedToppings;
-//       }
-//       else if (topArray.length === 4) {
-//         toppings = (topArray[0] + topArray[1] + topArray[2] + topArray[3]);
-//         // return inputtedToppings;
-//       }
-//       else {
-//         debugger;
-//         toppings = 0;
-//         // return inputtedToppings;
-//       }
-//     };
-//
-//     var inputtedToppings = toppings;
-//
-//     var newPizza = new Pizza(inputtedSize, inputtedToppings);
-//
-//     newPizza.priceFig();
-//
-//     $("#pizzaPrice").text(newPizza.priceTotal);
-//   });
-// });
+  // if (topArray.length === 1) {
+  //   return inputtedToppings = (topArray[0]);
+  // }
+  // else if (topArray.length === 2) {
+  //   return inputtedToppings = (topArray[0] + topArray[1]);
+  // }
+  // else if (topArray.lenght === 3) {
+  //   return inputtedToppings = (topArray[0] + topArray[1] + topArray[2]);
+  // }
+  // else if (topArray.length === 4) {
+  //   return inputtedToppings = (topArray[0] + topArray[1] + topArray[2] + topArray[3]);
+  // }
+  // else {
+  //   return inputtedToppings = 0;
+  // }
+// };
